@@ -17,15 +17,28 @@ const Footer = () => {
               Enhancing hostel life with smart vending machines. Making student life more convenient, safe, and enjoyable.
             </p>
             <div className="flex gap-4">
-              <div className="w-8 h-8 bg-background/10 rounded-lg flex items-center justify-center hover:bg-background/20 transition-colors cursor-pointer">
+              <a 
+                href="mailto:service.quickbites@gmail.com" 
+                className="w-8 h-8 bg-background/10 rounded-lg flex items-center justify-center hover:bg-background/20 transition-colors"
+              >
                 <span className="text-sm">📧</span>
-              </div>
-              <div className="w-8 h-8 bg-background/10 rounded-lg flex items-center justify-center hover:bg-background/20 transition-colors cursor-pointer">
+              </a>
+              <a 
+                href="https://www.instagram.com/quick_bites___/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-8 h-8 bg-background/10 rounded-lg flex items-center justify-center hover:bg-background/20 transition-colors"
+              >
                 <span className="text-sm">📱</span>
-              </div>
-              <div className="w-8 h-8 bg-background/10 rounded-lg flex items-center justify-center hover:bg-background/20 transition-colors cursor-pointer">
+              </a>
+              <a 
+                href="https://www.youtube.com/@Quickbites_012" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-8 h-8 bg-background/10 rounded-lg flex items-center justify-center hover:bg-background/20 transition-colors"
+              >
                 <span className="text-sm">💼</span>
-              </div>
+              </a>
             </div>
           </div>
 
@@ -39,8 +52,8 @@ const Footer = () => {
                 </div>
                 <div>
                   <p className="text-sm text-background/70">Sales & Inquiries</p>
-                  <a href="tel:+919876543210" className="text-background hover:text-primary transition-colors">
-                    +91 98765 43210
+                  <a href="tel:+918469822684" className="text-background hover:text-primary transition-colors">
+                    +91 8469822684
                   </a>
                 </div>
               </div>
@@ -51,8 +64,8 @@ const Footer = () => {
                 </div>
                 <div>
                   <p className="text-sm text-background/70">Support & Maintenance</p>
-                  <a href="tel:+919876543211" className="text-background hover:text-secondary transition-colors">
-                    +91 98765 43211
+                  <a href="tel:+918469822684" className="text-background hover:text-secondary transition-colors">
+                    +91 8469822684
                   </a>
                 </div>
               </div>
@@ -63,8 +76,8 @@ const Footer = () => {
                 </div>
                 <div>
                   <p className="text-sm text-background/70">Email Us</p>
-                  <a href="mailto:hello@quickbites.in" className="text-background hover:text-accent transition-colors">
-                    hello@quickbites.in
+                  <a href="mailto:service.quickbites@gmail.com" className="text-background hover:text-accent transition-colors">
+                    service.quickbites@gmail.com
                   </a>
                 </div>
               </div>
@@ -75,10 +88,30 @@ const Footer = () => {
           <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <div className="space-y-2">
-              <a href="#about" className="block text-background/70 hover:text-background transition-colors">About Us</a>
-              <a href="#benefits" className="block text-background/70 hover:text-background transition-colors">Benefits</a>
-              <a href="#how-we-operate" className="block text-background/70 hover:text-background transition-colors">How We Operate</a>
-              <a href="#contact" className="block text-background/70 hover:text-background transition-colors">Contact</a>
+              <button 
+                onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+                className="block text-background/70 hover:text-background transition-colors text-left"
+              >
+                About Us
+              </button>
+              <button 
+                onClick={() => document.getElementById('benefits')?.scrollIntoView({ behavior: 'smooth' })}
+                className="block text-background/70 hover:text-background transition-colors text-left"
+              >
+                Benefits
+              </button>
+              <button 
+                onClick={() => document.getElementById('how-we-operate')?.scrollIntoView({ behavior: 'smooth' })}
+                className="block text-background/70 hover:text-background transition-colors text-left"
+              >
+                How We Operate
+              </button>
+              <button 
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="block text-background/70 hover:text-background transition-colors text-left"
+              >
+                Contact
+              </button>
             </div>
           </div>
         </div>

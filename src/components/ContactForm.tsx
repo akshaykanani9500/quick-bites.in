@@ -8,6 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
+    mobile: "",
     email: "",
     message: ""
   });
@@ -33,13 +34,13 @@ const ContactForm = () => {
         description: "We'll get back to you within 24 hours. Thanks for your interest in Quick Bites!",
       });
       
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({ name: "", mobile: "", email: "", message: "" });
       setIsSubmitting(false);
     }, 1000);
   };
 
   return (
-    <section className="py-20 bg-gradient-soft">
+    <section id="contact" className="py-20 bg-gradient-soft">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-slide-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
@@ -90,7 +91,11 @@ const ContactForm = () => {
               <Card className="p-8 bg-gradient-primary text-white border-0 shadow-primary">
                 <h3 className="text-xl font-bold mb-4">Download Our Brochure</h3>
                 <p className="text-white/90 mb-6">Get detailed information about our services, pricing, and installation process.</p>
-                <Button variant="outline" className="bg-white/10 border-white/20 text-white hover:bg-white/20 w-full">
+                <Button 
+                  variant="outline" 
+                  className="bg-white/10 border-white/20 text-white hover:bg-white/20 w-full"
+                  onClick={() => window.open('https://drive.google.com/file/d/1RZPig795Ca3HB1Y9tRf-24ixvCs_zoH8/view?usp=sharing', '_blank')}
+                >
                   📄 Download PDF Brochure
                 </Button>
               </Card>
@@ -118,8 +123,25 @@ const ContactForm = () => {
               </div>
 
               <div>
+                <label htmlFor="mobile" className="block text-sm font-medium mb-2 text-foreground">
+                  Mobile Number *
+                </label>
+                <Input
+                  id="mobile"
+                  name="mobile"
+                  type="tel"
+                  value={formData.mobile}
+                  onChange={handleChange}
+                  required
+                  placeholder="e.g., +91 9876543210"
+                  className="border-border focus:border-primary"
+                />
+                <p className="text-xs text-muted-foreground mt-1">We'll use this to contact you directly for quick assistance</p>
+              </div>
+
+              <div>
                 <label htmlFor="email" className="block text-sm font-medium mb-2 text-foreground">
-                  Email Address *
+                  Email Address
                 </label>
                 <Input
                   id="email"
@@ -127,28 +149,26 @@ const ContactForm = () => {
                   type="email"
                   value={formData.email}
                   onChange={handleChange}
-                  required
                   placeholder="e.g., priya@hostel.edu"
                   className="border-border focus:border-primary"
                 />
-                <p className="text-xs text-muted-foreground mt-1">We respect your privacy and won't spam you</p>
+                <p className="text-xs text-muted-foreground mt-1">Optional - for email updates</p>
               </div>
 
               <div>
                 <label htmlFor="message" className="block text-sm font-medium mb-2 text-foreground">
-                  Tell us about your hostel *
+                  Tell us about your hostel
                 </label>
                 <Textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  required
                   rows={4}
                   placeholder="e.g., We have a 200-student girls' hostel and are interested in installing vending machines on each floor..."
                   className="border-border focus:border-primary resize-none"
                 />
-                <p className="text-xs text-muted-foreground mt-1">Help us understand your needs better (number of students, floors, current facilities, etc.)</p>
+                <p className="text-xs text-muted-foreground mt-1">Optional - Help us understand your needs better (number of students, floors, current facilities, etc.)</p>
               </div>
 
               <Button 

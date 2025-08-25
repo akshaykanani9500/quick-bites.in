@@ -35,10 +35,24 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button variant="hero" size="lg" className="text-lg px-8">
+              <Button 
+                variant="hero" 
+                size="lg" 
+                className="text-lg px-8"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              >
                 Get Started Today
               </Button>
-              <Button variant="outline" size="lg" className="bg-white/10 border-white/20 text-white hover:bg-white/20">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="bg-white/10 border-white/20 text-white hover:bg-white/20"
+                onClick={() => {
+                  if (confirm("Ready to learn more about Quick Bites? Click OK to download our detailed brochure with pricing and installation information.")) {
+                    window.open('https://drive.google.com/file/d/1RZPig795Ca3HB1Y9tRf-24ixvCs_zoH8/view?usp=sharing', '_blank');
+                  }
+                }}
+              >
                 Learn More
               </Button>
             </div>
