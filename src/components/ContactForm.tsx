@@ -89,21 +89,21 @@ const ContactForm = () => {
               </Card>
 
               <Card className="p-8 bg-gradient-primary text-white border-0 shadow-primary">
-                <h3 className="text-xl font-bold mb-4">Download Our Brochure</h3>
-                <p className="text-white/90 mb-6">Get detailed information about our services, pricing, and installation process.</p>
+                <h3 className="text-xl font-bold mb-4">Ready to Get Started?</h3>
+                <p className="text-white/90 mb-6">Fill out the form and we'll get back to you within 24 hours with a custom solution for your hostel.</p>
                 <Button 
                   variant="outline" 
                   className="bg-white/10 border-white/20 text-white hover:bg-white/20 w-full"
-                  onClick={() => window.open('https://drive.google.com/file/d/1RZPig795Ca3HB1Y9tRf-24ixvCs_zoH8/view?usp=sharing', '_blank')}
+                  onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  📄 Download PDF Brochure
+                  🚀 Get Your Quote Now
                 </Button>
               </Card>
             </div>
           </div>
 
           {/* Contact Form */}
-          <Card className="p-8 bg-background border-border shadow-soft animate-fade-in" style={{animationDelay: '0.2s'}}>
+          <Card id="contact-form" className="p-8 bg-background border-border shadow-soft animate-fade-in" style={{animationDelay: '0.2s'}}>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2 text-foreground">
