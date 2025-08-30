@@ -26,17 +26,36 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // For now, we'll just show a success message
-    // The actual Google Sheets integration requires Supabase backend
-    setTimeout(() => {
-      toast({
-        title: "Message sent successfully! 🎉",
-        description: "We'll get back to you within 24 hours. Thanks for your interest in Quick Bites!",
+    try {
+      const response = await fetch('/api/submit-contact-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-      
-      setFormData({ name: "", mobile: "", email: "", message: "" });
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast({
+          title: "Message sent successfully! 🎉",
+          description: "We'll get back to you within 24 hours. Thanks for your interest in Quick Bites!",
+        });
+        setFormData({ name: "", mobile: "", email: "", message: "" });
+      } else {
+        throw new Error(result.error || 'Failed to submit form');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast({
+        title: "Submission failed",
+        description: "Please try again or contact us directly on WhatsApp.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (
@@ -94,9 +113,9 @@ const ContactForm = () => {
                 <Button 
                   variant="outline" 
                   className="bg-white/10 border-white/20 text-white hover:bg-white/20 w-full"
-                  onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => window.open('https://wa.me/918469822684?text=Hi%20Quick%20Bites!%20I%27m%20interested%20in%20your%20vending%20machine%20services%20for%20our%20hostel.', '_blank')}
                 >
-                  🚀 Get Your Quote Now
+                  💬 Contact us on WhatsApp
                 </Button>
               </Card>
             </div>
