@@ -14,11 +14,13 @@ const Hero = () => {
           {/* Left Content */}
           <div className="text-center lg:text-left animate-fade-in">
             <div className="flex justify-center lg:justify-start mb-6">
-              <img 
-                src="/lovable-uploads/46489922-43fb-4cd9-a6e3-270980b2796e.png" 
-                alt="Quick-Bites Logo" 
-                className="h-20 md:h-24 lg:h-28 w-auto"
-              />
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20 shadow-soft">
+                <img 
+                  src="/lovable-uploads/46489922-43fb-4cd9-a6e3-270980b2796e.png" 
+                  alt="Quick-Bites Logo" 
+                  className="h-16 md:h-20 lg:h-24 w-auto"
+                />
+              </div>
             </div>
             
             <h2 className="text-xl md:text-2xl text-white/90 mb-8 font-medium">
