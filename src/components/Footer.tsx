@@ -15,30 +15,6 @@ const Footer = () => {
             <p className="text-background/70 mb-4 max-w-sm">
               Enhancing hostel life with smart vending machines. Making student life more convenient, safe, and enjoyable.
             </p>
-            <div className="flex gap-4">
-              <a 
-                href="mailto:service.quickbites@gmail.com" 
-                className="w-8 h-8 bg-background/10 rounded-lg flex items-center justify-center hover:bg-background/20 transition-colors"
-              >
-                <span className="text-sm">📧</span>
-              </a>
-              <a 
-                href="https://www.instagram.com/quick_bites___/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-8 h-8 bg-background/10 rounded-lg flex items-center justify-center hover:bg-background/20 transition-colors"
-              >
-                <span className="text-sm">📱</span>
-              </a>
-              <a 
-                href="https://www.youtube.com/@Quickbites_012" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-8 h-8 bg-background/10 rounded-lg flex items-center justify-center hover:bg-background/20 transition-colors"
-              >
-                <span className="text-sm">💼</span>
-              </a>
-            </div>
           </div>
 
           {/* Contact Information */}
