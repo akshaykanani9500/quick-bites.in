@@ -13,17 +13,12 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="text-center lg:text-left animate-fade-in">
-            <div className="flex items-center justify-center lg:justify-start gap-4 mb-6">
-              <div className="w-16 h-16 bg-white rounded-xl p-3 shadow-soft">
-                <div className="w-full h-full bg-gradient-primary rounded-lg flex items-center justify-center">
-                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v12h16V6H4zm2 2h2v2H6V8zm4 0h2v2h-2V8zm4 0h2v2h-2V8zm-8 4h2v2H6v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zm-8 4h2v2H6v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z"/>
-                  </svg>
-                </div>
-              </div>
-              <h1 className="text-4xl md:text-6xl font-bold text-white">
-                Quick<span className="text-secondary">-</span>Bites
-              </h1>
+            <div className="flex justify-center lg:justify-start mb-6">
+              <img 
+                src="/lovable-uploads/46489922-43fb-4cd9-a6e3-270980b2796e.png" 
+                alt="Quick-Bites Logo" 
+                className="h-20 md:h-24 lg:h-28 w-auto"
+              />
             </div>
             
             <h2 className="text-xl md:text-2xl text-white/90 mb-8 font-medium">
@@ -39,17 +34,9 @@ const Hero = () => {
                 variant="hero" 
                 size="lg" 
                 className="text-lg px-8"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => window.open('https://wa.me/918469822684?text=Hi%20Quick%20Bites!%20I%27m%20interested%20in%20your%20vending%20machine%20services%20for%20our%20hostel.', '_blank')}
               >
-                Get Started Today
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="bg-white/10 border-white/20 text-white hover:bg-white/20"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Learn More
+                💬 Contact us on WhatsApp
               </Button>
             </div>
           </div>

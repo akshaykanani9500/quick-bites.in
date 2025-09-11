@@ -3,7 +3,6 @@ import About from "@/components/About";
 import ProblemSolution from "@/components/ProblemSolution";
 import Benefits from "@/components/Benefits";
 import HowWeOperate from "@/components/HowWeOperate";
-import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -14,7 +13,6 @@ const Index = () => {
       <ProblemSolution />
       <Benefits />
       <HowWeOperate />
-      <ContactForm />
       <Footer />
     </main>
   );
